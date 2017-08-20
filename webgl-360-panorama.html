@@ -83,7 +83,7 @@
         gl.enable(gl.CULL_FACE);
 
         panorama = new VRPanorama(gl);
-        panorama.setImage("img/test.jpg");
+        panorama.setImage("images/test.jpg");
 
         var enablePerformanceMonitoring = WGLUUrl.getBool(
             'enablePerformanceMonitoring', false);
@@ -121,12 +121,12 @@
         if (vrDisplay.isPresenting) {
           if (vrDisplay.capabilities.hasExternalDisplay) {
             VRSamplesUtil.removeButton(vrPresentButton);
-            vrPresentButton = VRSamplesUtil.addButton("Exit VR", "E", "img/cardboard64.png", onVRExitPresent);
+            vrPresentButton = VRSamplesUtil.addButton("Exit VR", "E", "images/cardboard64.png", onVRExitPresent);
           }
         } else {
           if (vrDisplay.capabilities.hasExternalDisplay) {
             VRSamplesUtil.removeButton(vrPresentButton);
-            vrPresentButton = VRSamplesUtil.addButton("Enter VR", "E", "img/cardboard64.png", onVRRequestPresent);
+            vrPresentButton = VRSamplesUtil.addButton("Enter VR", "E", "images/cardboard64.png", onVRRequestPresent);
           }
         }
       }
@@ -143,7 +143,7 @@
             init(true);
 
             if (vrDisplay.capabilities.canPresent)
-              vrPresentButton = VRSamplesUtil.addButton("Enter VR", "E", "img/cardboard64.png", onVRRequestPresent);
+              vrPresentButton = VRSamplesUtil.addButton("Enter VR", "E", "images/cardboard64.png", onVRRequestPresent);
 
             if (vrDisplay.capabilities.canPresent && WGLUUrl.getBool('canvasClickPresents', false))
               webglCanvas.addEventListener("click", onVRRequestPresent, false);
