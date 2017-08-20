@@ -17,6 +17,8 @@
 	<body>
 		<script src="js/three.js"></script>
 		<script src="js/WebVR.js"></script>
+		<script src="js/OrbitControls.js"></script>
+
 		<script>
 		WEBVR.checkAvailability().catch( function( message ) {
 			document.body.appendChild( WEBVR.getMessageContainer( message ) );
@@ -25,6 +27,7 @@
 		var camera;
 		var renderer;
 		var scene;
+    var controls;
 
 		init();
 		animate();
@@ -34,6 +37,8 @@
 			renderer.setPixelRatio( window.devicePixelRatio );
 			renderer.setSize( window.innerWidth, window.innerHeight );
 			document.body.appendChild( renderer.domElement );
+
+			controls = new THREE.OrbitControls( camera, renderer.domElement );
 
 			renderer.vr.enabled = true;
 
@@ -117,10 +122,17 @@
 
 		function animate() {
 			renderer.animate( render );
+			controls.update();
+			//update();
 		}
 
 		function render() {
 			renderer.render( scene, camera );
+		}
+
+		function update()
+		{
+			controls.update();
 		}
 
 		</script>

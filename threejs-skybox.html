@@ -10,26 +10,18 @@
 
 <script src="js/Three.js"></script>
 <script src="js/Detector.js"></script>
-<script src="js/Stats.js"></script>
 <script src="js/OrbitControls.js"></script>
 <script src="js/THREEx.KeyboardState.js"></script>
 <script src="js/THREEx.FullScreen.js"></script>
 <script src="js/THREEx.WindowResize.js"></script>
 
-<!-- jQuery code to display an information button and box when clicked. -->
-<script src="js/jquery-1.9.1.js"></script>
-<script src="js/jquery-ui.js"></script>
-<link rel=stylesheet href="css/jquery-ui.css" />
-<link rel=stylesheet href="css/info.css"/>
-<script src="js/info.js"></script>
-<div id="infoButton"></div>
-<div id="infoBox" title="Demo Information">
+
 </div>
 
 <div id="ThreeJS" style="position: absolute; left:0px; top:0px"></div>
 <script>
 
-var container, scene, camera, renderer, controls, stats;
+var container, scene, camera, renderer, controls;
 var keyboard = new THREEx.KeyboardState();
 var clock = new THREE.Clock();
 var cube;
@@ -56,11 +48,7 @@ function init()
 	THREEx.WindowResize(renderer, camera);
 	THREEx.FullScreen.bindKey({ charCode : 'm'.charCodeAt(0) });
 	controls = new THREE.OrbitControls( camera, renderer.domElement );
-	stats = new Stats();
-	stats.domElement.style.position = 'absolute';
-	stats.domElement.style.bottom = '0px';
-	stats.domElement.style.zIndex = 100;
-	container.appendChild( stats.domElement );
+
 	var light = new THREE.PointLight(0xffffff);
 	light.position.set(0,250,0);
 	scene.add(light);
@@ -92,7 +80,6 @@ function animate()
 function update()
 {
 	controls.update();
-	stats.update();
 }
 
 function render()
