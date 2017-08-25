@@ -25,8 +25,9 @@
         <img id="10" src="img/21.svg">
       </a-assets>
 
-      <a-entity camera look-controls standing="true">
-        <a-cursor color="#FFFF00"/>
+      <a-entity id="camera" camera position="0 0 0" look-controls="enabled: true" rotation="0 0 0" cursor-visible="enabled: true" standing="true">
+         <a-entity id="cursor" cursor="fuse: true;  maxDistance: 100; timeout: 200" geometry="primitive: ring; radiusInner: 0.005; radiusOuter: 0.01" material="color: aquamarine" position="0 0 -0.69" raycaster=""></a-entity>
+         <a-animation attribute="rotation" begin="resetpose" to="0 0 0"></a-animation>
       </a-entity>
 
       <a-sky src="#skymap" rotation="0 -90 0"></a-sky>
@@ -189,7 +190,21 @@
         <a-animation attribute="intensity" from="0" to="1" delay="500" dur="500" fill="both"></a-animation>
       </a-light>
       <a-light type="ambient" color="#4f6487" ></a-light>
+
+      <a-image id="reset" src="reset.png" position="0 -4 4" scale="" look-at="[camera]"></a-image>
+
     </a-scene>
+
+    <script type="text/javascript">
+      document.querySelector('#reset').addEventListener('click', function () {
+      document.querySelector('#camera').emit('resetpose');
+      });
+
+      document.addEventListener("keyup", function(){
+        document.querySelector('#camera').emit('resetpose');
+      }, false);
+
+    </script>
 
   </body>
 </html>
