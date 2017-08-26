@@ -204,13 +204,11 @@
     <script type="text/javascript">
       document.querySelector('#reset').addEventListener('click', function () {
         console.log("on click event of reset2");
-        alert("try to reset pose - click event");
         document.querySelector('#camera').emit('resetpose0');
       });
 
       document.addEventListener("keyup", function(){
         console.log("on keyup event");
-        alert("try to reset pose - keyup event");
         document.querySelector('#camera').emit('resetpose0');
       }, false);
 
