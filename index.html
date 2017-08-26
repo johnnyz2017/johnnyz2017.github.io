@@ -192,16 +192,25 @@
       </a-light>
       <a-light type="ambient" color="#4f6487" ></a-light>
 
-      <a-image id="reset" src="#resetimg" position="0 0 4" scale="" look-at="[camera]"></a-image>
+      <a-entity id="resetentity" position="0 0 4" look-at="[camera]">
+        <a-image id="reset" src="#resetimg" position="0 0 0">
+        </a-image>
+      </a-entity>
+
+      <!-- <a-image id="reset" src="#resetimg" position="0 0 4" scale="" look-at="[camera]"></a-image> -->
 
     </a-scene>
 
     <script type="text/javascript">
       document.querySelector('#reset').addEventListener('click', function () {
-      document.querySelector('#camera').emit('resetpose');
+        console.log("on click event of reset2");
+        alert("try to reset pose - click event");
+        document.querySelector('#camera').emit('resetpose');
       });
 
       document.addEventListener("keyup", function(){
+        console.log("on keyup event");
+        alert("try to reset pose - keyup event");
         document.querySelector('#camera').emit('resetpose');
       }, false);
 
