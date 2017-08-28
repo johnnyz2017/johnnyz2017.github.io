@@ -203,7 +203,11 @@
 
     <script type="text/javascript">
       document.querySelector('#reset').addEventListener('click', function () {
-        document.querySelector('#camera').emit('resetpose0');  //acturally works normal, but can not directly chang rotation property on mobile divice cause of the gyro controller(VRController)
+        //document.querySelector('#camera').emit('resetpose0');  //acturally works normal, but can not directly chang rotation property on mobile divice cause of the gyro controller(VRController)
+        var cam = document.querySelector('#camera');
+        cam.setAttribute('look-controls', {enabled:false});
+        cam.setAttribute('rotation', '0 0 0');
+        cam.setAttribute('look-controls', {enabled:true});
       });
 
       document.addEventListener("keyup", function(){
