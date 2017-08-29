@@ -28,7 +28,6 @@
 
       <a-entity id="camera" camera position="0 0 0" look-controls="enabled: true" rotation="0 0 0" cursor-visible="enabled: true" standing="true">
          <a-entity id="cursor" cursor="fuse: true;  maxDistance: 100; timeout: 200" geometry="primitive: ring; radiusInner: 0.005; radiusOuter: 0.01" material="color: aquamarine" position="0 0 -0.69" raycaster=""></a-entity>
-         <a-animation attribute="position" begin="resetpose0" to="-1 0 9"></a-animation>
       </a-entity>
 
       <a-sky src="#skymap" rotation="0 -90 0"></a-sky>
@@ -197,29 +196,12 @@
         </a-image>
       </a-entity>
 
-      <!-- <a-image id="reset" src="#resetimg" position="0 0 4" scale="" look-at="[camera]"></a-image> -->
-
     </a-scene>
 
     <script type="text/javascript">
       document.querySelector('#reset').addEventListener('click', function () {
-        //document.querySelector('#camera').emit('resetpose0');  //acturally works normal, but can not directly chang rotation property on mobile divice cause of the gyro controller(VRController)
         var cam = document.querySelector('#camera');
-        cam.removeAttribute('look-controls');
-        console.log('remove look-controls');
-        cam.setAttribute('rotation', '0 0 0');
-        console.log('rotate to 000');
-        cam.setAttribute('look-controls', {enabled:true});
-        console.log('add look-controls');
-        // cam.setAttribute('look-controls', {enabled:false});
-        // cam.setAttribute('rotation', '0 0 0');
-        // cam.setAttribute('look-controls', {enabled:true});
-
-        // alert(cam.components["look-controls"]);
-
-        //cam.components["look-controls"].previousHMDPosition.set(0,0,0);
-
-
+        cam.components["look-controls"].controls.getVRDisplay().resetPose();
       });
 
       document.addEventListener("keyup", function(){
