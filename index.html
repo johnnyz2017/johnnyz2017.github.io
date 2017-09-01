@@ -11,7 +11,7 @@
       <a-assets>
         <a-mixin id="image" geometry="height: 2; width: 2"></a-mixin>
 
-        <img id="skymap" src="img/bg.jpg">
+        <img id="skymap" src="img/vr/bg.jpg">
 
         <img id="01" src="img/1.svg">
         <img id="02" src="img/2.svg">
@@ -24,6 +24,12 @@
         <img id="09" src="img/9.svg">
         <img id="10" src="img/21.svg">
         <img id="resetimg" src="img/reset.png">
+
+        <img id="m0" src="img/vr/vr.png">
+        <img id="mr1" src="img/vr/right1.png">
+        <img id="mr2" src="img/vr/right2.png">
+        <img id="mr3" src="img/vr/right3.png">
+        <img id="mr4" src="img/vr/right4.png">
       </a-assets>
 
       <a-entity id="camera" camera position="0 0 0" look-controls="enabled: true" rotation="0 0 0" cursor-visible="enabled: true" standing="true">
@@ -34,52 +40,20 @@
 
 
       <a-entity id="menus_middle" scale="0.6 0.6 0.6" rotation="0 0 0" color="green" position="0 0 -4">
-        <a-image mixin="image" src="#01" scale="0.5 0.5 0.5" position="-2 2 0" color="black">
-          <a-animation attribute="rotation" begin="click" to="0 360 0"></a-animation>
-          <a-animation attribute="color" begin="mouseenter" to="red"></a-animation>
-          <a-animation attribute="color" begin="mouseleave" to="black"></a-animation>
+        <a-image mixin="image" src="#m0" scale="3 2 1" position="-1.5 0 0" look-at="[camera]">
         </a-image>
-        <a-image mixin="image" src="#02" scale="0.5 0.5 0.5" position="0 2 0" color="black">
+        <a-image mixin="image" src="#mr1" scale="1 0.48 0.5" position="2.6 1.5 0" look-at="[camera]">
           <a-animation attribute="rotation" begin="click" to="0 360 0"></a-animation>
-          <a-animation attribute="color" begin="mouseenter" to="red"></a-animation>
-          <a-animation attribute="color" begin="mouseleave" to="black"></a-animation>
         </a-image>
-        <a-image mixin="image" src="#03" scale="0.5 0.5 0.5" position="2 2 0" color="black">
+        <a-image mixin="image" src="#mr2" scale="1 0.48 0.5" position="2.6 0.5 0" look-at="[camera]">
           <a-animation attribute="rotation" begin="click" to="0 360 0"></a-animation>
-          <a-animation attribute="color" begin="mouseenter" to="red"></a-animation>
-          <a-animation attribute="color" begin="mouseleave" to="black"></a-animation>
         </a-image>
 
-        <a-image mixin="image" src="#04" scale="0.5 0.5 0.5" position="-2 0 0" color="black">
+        <a-image mixin="image" src="#mr3" scale="1 0.48 0.5" position="2.6 -0.5 0" look-at="[camera]">
           <a-animation attribute="rotation" begin="click" to="0 360 0"></a-animation>
-          <a-animation attribute="color" begin="mouseenter" to="red"></a-animation>
-          <a-animation attribute="color" begin="mouseleave" to="black"></a-animation>
         </a-image>
-        <a-image mixin="image" src="#05" scale="0.5 0.5 0.5" position="0 0 0" color="black">
+        <a-image mixin="image" src="#mr4" scale="1 0.48 0.5" position="2.6 -1.5 0" look-at="[camera]">
           <a-animation attribute="rotation" begin="click" to="0 360 0"></a-animation>
-          <a-animation attribute="color" begin="mouseenter" to="red"></a-animation>
-          <a-animation attribute="color" begin="mouseleave" to="black"></a-animation>
-        </a-image>
-        <a-image mixin="image" src="#06" scale="0.5 0.5 0.5" position="2 0 0" color="black">
-          <a-animation attribute="rotation" begin="click" to="0 360 0"></a-animation>
-          <a-animation attribute="color" begin="mouseenter" to="red"></a-animation>
-          <a-animation attribute="color" begin="mouseleave" to="black"></a-animation>
-        </a-image>
-
-        <a-image mixin="image" src="#07" scale="0.5 0.5 0.5" position="-2 -2 0" color="black">
-          <a-animation attribute="rotation" begin="click" to="0 360 0"></a-animation>
-          <a-animation attribute="color" begin="mouseenter" to="red"></a-animation>
-          <a-animation attribute="color" begin="mouseleave" to="black"></a-animation>
-        </a-image>
-        <a-image mixin="image" src="#08" scale="0.5 0.5 0.5" position="0 -2 0" color="black">
-          <a-animation attribute="rotation" begin="click" to="0 360 0"></a-animation>
-          <a-animation attribute="color" begin="mouseenter" to="red"></a-animation>
-          <a-animation attribute="color" begin="mouseleave" to="black"></a-animation>
-        </a-image>
-        <a-image mixin="image" src="#09" scale="0.5 0.5 0.5" position="2 -2 0" color="black">
-          <a-animation attribute="rotation" begin="click" to="0 360 0"></a-animation>
-          <a-animation attribute="color" begin="mouseenter" to="red"></a-animation>
-          <a-animation attribute="color" begin="mouseleave" to="black"></a-animation>
         </a-image>
       </a-entity>
 
