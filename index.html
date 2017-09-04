@@ -34,7 +34,8 @@
       </a-assets>
 
       <a-entity id="camera" camera position="0 0 0" look-controls="enabled: true" rotation="0 0 0" cursor-visible="enabled: true" standing="true" daydream-controller>
-         <a-entity id="cursor" cursor="fuse: true;  maxDistance: 100; timeout: 200" material="color: aquamarine" position="0 0 -0.69" raycaster=""></a-entity>
+         <!--a-entity id="cursor" cursor="fuse: true;  maxDistance: 100; timeout: 200" material="color: aquamarine" position="0 0 -0.69" raycaster=""></a-entity-->
+         <a-cursor></a-cursor>
          <a-animation attribute="rotation" begin="resetpose" to="0 0 0" easing="linear" dur="100"></a-animation>
       </a-entity>
 
