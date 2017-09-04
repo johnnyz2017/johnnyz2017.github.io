@@ -34,6 +34,7 @@
 
       <a-entity id="camera" camera position="0 0 0" look-controls="enabled: true" rotation="0 0 0" cursor-visible="enabled: true" standing="true">
          <a-entity id="cursor" cursor="fuse: true;  maxDistance: 100; timeout: 200" geometry="primitive: ring; radiusInner: 0.005; radiusOuter: 0.01" material="color: aquamarine" position="0 0 -0.69" raycaster=""></a-entity>
+         <a-animation attribute="rotation" begin="resetpose" to="0 0 0" easing="linear" dur="100"></a-animation>
       </a-entity>
 
       <a-sky src="#skymap" rotation="0 -90 0"></a-sky>
@@ -175,11 +176,17 @@
     <script type="text/javascript">
       document.querySelector('#reset').addEventListener('click', function () {
         var cam = document.querySelector('#camera');
-        cam.components["look-controls"].controls.getVRDisplay().resetPose();
+        var vrdisplay = cam.components["look-controls"].controls.getVRDisplay();
+        if(vrdisplay != "undefined"){
+          cam.components["look-controls"].controls.getVRDisplay().resetPose();
+        }
+        else {
+            cam.emit('resetpose');
+        }
       });
 
       document.addEventListener("keyup", function(){
-        document.querySelector('#camera').emit('resetpose0');
+        document.querySelector('#camera').emit('resetpose');
       }, false);
 
     </script>
