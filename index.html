@@ -177,8 +177,8 @@
       document.querySelector('#reset').addEventListener('click', function () {
         var cam = document.querySelector('#camera');
         var vrdisplay = cam.components["look-controls"].controls.getVRDisplay();
-        if(vrdisplay != "undefined"){
-          cam.components["look-controls"].controls.getVRDisplay().resetPose();
+        if(vrdisplay){
+          vrdisplay.resetPose();
         }
         else {
             cam.emit('resetpose');
