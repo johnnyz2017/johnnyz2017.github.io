@@ -177,11 +177,11 @@
       document.querySelector('#reset').addEventListener('click', function () {
         var cam = document.querySelector('#camera');
         var vrdisplay = cam.components["look-controls"].controls.getVRDisplay();
-        if(vrdisplay){
-          vrdisplay.resetPose();
+        if(vrdisplay == undefined){
+          cam.emit('resetpose');
         }
         else {
-            cam.emit('resetpose');
+          vrdisplay.resetPose();
         }
       });
 
