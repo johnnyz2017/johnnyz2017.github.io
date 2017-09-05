@@ -5,7 +5,13 @@
     <title>Demo Page</title>
     <meta name="description" content="360 with buttons — A-Frame">
     <script src="js/aframe.js"></script>
-    <script src="js/aframe-daydream-controller-component.min.js"></script>
+    <!-- <script src="js/aframe-daydream-controller-component.min.js"></script> -->
+    <!-- <script src="https://npmcdn.com/aframe-animation-component@3.0.1"></script>
+    <script src="https://npmcdn.com/aframe-event-set-component@3.0.1"></script>
+    <script src="https://npmcdn.com/aframe-layout-component@3.0.1"></script>
+    <script src="https://npmcdn.com/aframe-template-component@3.0.1"></script>
+    <script src="js/set-image.js"></script> -->
+    <!-- <script src="js/update-raycaster.js"></script> -->
   </head>
   <body>
     <a-scene vr-mode-ui="enabled: true">
@@ -14,23 +20,34 @@
 
         <img id="skymap" src="img/vr/bg.jpg">
 
-        <img id="01" src="img/1.svg">
-        <img id="02" src="img/2.svg">
-        <img id="03" src="img/3.svg">
-        <img id="04" src="img/4.svg">
-        <img id="05" src="img/5.svg">
-        <img id="06" src="img/6.svg">
-        <img id="07" src="img/7.svg">
-        <img id="08" src="img/8.svg">
-        <img id="09" src="img/9.svg">
-        <img id="10" src="img/21.svg">
-        <img id="resetimg" src="img/reset.png">
+        <img id="01" crossorigin="anonymous" src="img/1.svg" crossorigin="anonymous">>
+        <img id="02" crossorigin="anonymous" src="img/2.svg" crossorigin="anonymous">>
+        <img id="03" crossorigin="anonymous" src="img/3.svg">
+        <img id="04" crossorigin="anonymous" src="img/4.svg">
+        <img id="05" crossorigin="anonymous" src="img/5.svg">
+        <img id="06" crossorigin="anonymous" src="img/6.svg">
+        <img id="07" crossorigin="anonymous" src="img/7.svg">
+        <img id="08" crossorigin="anonymous" src="img/8.svg">
+        <img id="09" crossorigin="anonymous" src="img/9.svg">
+        <img id="10" crossorigin="anonymous" src="img/21.svg">
+        <img id="resetimg" crossorigin="anonymous" src="img/reset.png">
 
-        <img id="m0" src="img/vr/vr.png">
-        <img id="mr1" src="img/vr/right1.png">
-        <img id="mr2" src="img/vr/right2.png">
-        <img id="mr3" src="img/vr/right3.png">
-        <img id="mr4" src="img/vr/right4.png">
+        <img id="m0" crossorigin="anonymous" src="img/vr/vr.png">
+        <img id="mr1" crossorigin="anonymous" src="img/vr/right1.png">
+        <img id="mr2" crossorigin="anonymous" src="img/vr/right2.png">
+        <img id="mr3" crossorigin="anonymous" src="img/vr/right3.png">
+        <img id="mr4" crossorigin="anonymous" src="img/vr/right4.png">
+
+
+        <img id="rr1" crossorigin="anonymous" src="img/vr/edu01.jpg">
+        <img id="rr2" crossorigin="anonymous" src="img/vr/edu02.jpg">
+        <img id="rr3" crossorigin="anonymous" src="img/vr/edu03.jpg">
+
+        <img id="arrowup" crossorigin="anonymous" src="img/vr/top.png">
+        <img id="arrowdown" crossorigin="anonymous" src="img/vr/down.png">
+
+        <img id="videoicon" crossorigin="anonymous" src="img/vr/video.png">
+
       </a-assets>
 
       <a-entity id="camera" camera position="0 0 0" look-controls="enabled: true" rotation="0 0 0" cursor-visible="enabled: true" standing="true">
@@ -60,103 +77,54 @@
         </a-image>
       </a-entity>
 
-      <a-entity id="menus_left" scale="0.6 0.6 0.6" rotation="0 60 0" color="green" position="-3.46 0 -2">
-        <a-image mixin="image" src="#01" scale="0.5 0.5 0.5" position="-2 2 0" color="black">
-          <a-animation attribute="rotation" begin="click" to="0 360 0"></a-animation>
-          <a-animation attribute="color" begin="mouseenter" to="red"></a-animation>
-          <a-animation attribute="color" begin="mouseleave" to="black"></a-animation>
+      <a-entity id="menus_left" scale="0.6 0.6 0.6" rotation="0 60 0" color="green" position="-4 0 -2">
+        <a-image id="v0" mixin="image" src="#videoicon" scale="0.5 0.5 0.5" position="-2 2 0">
         </a-image>
-        <a-image mixin="image" src="#02" scale="0.5 0.5 0.5" position="0 2 0" color="black">
-          <a-animation attribute="rotation" begin="click" to="0 360 0"></a-animation>
-          <a-animation attribute="color" begin="mouseenter" to="red"></a-animation>
-          <a-animation attribute="color" begin="mouseleave" to="black"></a-animation>
+        <a-image id="v1" mixin="image" src="#videoicon" scale="0.5 0.5 0.5" position="0 2 0">
         </a-image>
-        <a-image mixin="image" src="#03" scale="0.5 0.5 0.5" position="2 2 0" color="black">
-          <a-animation attribute="rotation" begin="click" to="0 360 0"></a-animation>
-          <a-animation attribute="color" begin="mouseenter" to="red"></a-animation>
-          <a-animation attribute="color" begin="mouseleave" to="black"></a-animation>
+        <a-image id="v2" mixin="image" src="#videoicon" scale="0.5 0.5 0.5" position="2 2 0">
         </a-image>
 
-        <a-image mixin="image" src="#04" scale="0.5 0.5 0.5" position="-2 0 0" color="black">
-          <a-animation attribute="rotation" begin="click" to="0 360 0"></a-animation>
-          <a-animation attribute="color" begin="mouseenter" to="red"></a-animation>
-          <a-animation attribute="color" begin="mouseleave" to="black"></a-animation>
+        <a-image id="v3" mixin="image" src="#videoicon" scale="0.5 0.5 0.5" position="-2 0 0">
         </a-image>
-        <a-image mixin="image" src="#05" scale="0.5 0.5 0.5" position="0 0 0" color="black">
-          <a-animation attribute="rotation" begin="click" to="0 360 0"></a-animation>
-          <a-animation attribute="color" begin="mouseenter" to="red"></a-animation>
-          <a-animation attribute="color" begin="mouseleave" to="black"></a-animation>
+        <a-image id="v4" mixin="image" src="#videoicon" scale="0.5 0.5 0.5" position="0 0 0">
         </a-image>
-        <a-image mixin="image" src="#06" scale="0.5 0.5 0.5" position="2 0 0" color="black">
-          <a-animation attribute="rotation" begin="click" to="0 360 0"></a-animation>
-          <a-animation attribute="color" begin="mouseenter" to="red"></a-animation>
-          <a-animation attribute="color" begin="mouseleave" to="black"></a-animation>
+        <a-image id="v5" mixin="image" src="#videoicon" scale="0.5 0.5 0.5" position="2 0 0">
         </a-image>
 
-        <a-image mixin="image" src="#07" scale="0.5 0.5 0.5" position="-2 -2 0" color="black">
-          <a-animation attribute="rotation" begin="click" to="0 360 0"></a-animation>
-          <a-animation attribute="color" begin="mouseenter" to="red"></a-animation>
-          <a-animation attribute="color" begin="mouseleave" to="black"></a-animation>
+        <a-image id="v6" mixin="image" src="#videoicon" scale="0.5 0.5 0.5" position="-2 -2 0">
         </a-image>
-        <a-image mixin="image" src="#08" scale="0.5 0.5 0.5" position="0 -2 0" color="black">
-          <a-animation attribute="rotation" begin="click" to="0 360 0"></a-animation>
-          <a-animation attribute="color" begin="mouseenter" to="red"></a-animation>
-          <a-animation attribute="color" begin="mouseleave" to="black"></a-animation>
+        <a-image id="v7" mixin="image" src="#videoicon" scale="0.5 0.5 0.5" position="0 -2 0">
         </a-image>
-        <a-image mixin="image" src="#09" scale="0.5 0.5 0.5" position="2 -2 0" color="black">
-          <a-animation attribute="rotation" begin="click" to="0 360 0"></a-animation>
-          <a-animation attribute="color" begin="mouseenter" to="red"></a-animation>
-          <a-animation attribute="color" begin="mouseleave" to="black"></a-animation>
+        <a-image id="v8" mixin="image" src="#videoicon" scale="0.5 0.5 0.5" position="2 -2 0">
         </a-image>
       </a-entity>
 
-      <a-entity id="menus_right" scale="0.6 0.6 0.6" rotation="0 -60 0" color="green" position="3.46 0 -2">
-        <a-image mixin="image" src="#01" scale="0.5 0.5 0.5" position="-2 2 0" color="black">
+      <a-entity id="menus_right" scale="0.6 0.6 0.6" rotation="0 -60 0" backgroudcolor="yellow" color="green" position="3.46 0 -2">
+
+        <a-image id="aup" mixin="image" src="#arrowup" scale="0.8 0.3 0.5" position="-1.5 1.7 0" look-at="[camera]">
           <a-animation attribute="rotation" begin="click" to="0 360 0"></a-animation>
-          <a-animation attribute="color" begin="mouseenter" to="red"></a-animation>
-          <a-animation attribute="color" begin="mouseleave" to="black"></a-animation>
-        </a-image>
-        <a-image mixin="image" src="#02" scale="0.5 0.5 0.5" position="0 2 0" color="black">
-          <a-animation attribute="rotation" begin="click" to="0 360 0"></a-animation>
-          <a-animation attribute="color" begin="mouseenter" to="red"></a-animation>
-          <a-animation attribute="color" begin="mouseleave" to="black"></a-animation>
-        </a-image>
-        <a-image mixin="image" src="#03" scale="0.5 0.5 0.5" position="2 2 0" color="black">
-          <a-animation attribute="rotation" begin="click" to="0 360 0"></a-animation>
-          <a-animation attribute="color" begin="mouseenter" to="red"></a-animation>
-          <a-animation attribute="color" begin="mouseleave" to="black"></a-animation>
         </a-image>
 
-        <a-image mixin="image" src="#04" scale="0.5 0.5 0.5" position="-2 0 0" color="black">
-          <a-animation attribute="rotation" begin="click" to="0 360 0"></a-animation>
-          <a-animation attribute="color" begin="mouseenter" to="red"></a-animation>
-          <a-animation attribute="color" begin="mouseleave" to="black"></a-animation>
-        </a-image>
-        <a-image mixin="image" src="#05" scale="0.5 0.5 0.5" position="0 0 0" color="black">
-          <a-animation attribute="rotation" begin="click" to="0 360 0"></a-animation>
-          <a-animation attribute="color" begin="mouseenter" to="red"></a-animation>
-          <a-animation attribute="color" begin="mouseleave" to="black"></a-animation>
-        </a-image>
-        <a-image mixin="image" src="#06" scale="0.5 0.5 0.5" position="2 0 0" color="black">
-          <a-animation attribute="rotation" begin="click" to="0 360 0"></a-animation>
-          <a-animation attribute="color" begin="mouseenter" to="red"></a-animation>
-          <a-animation attribute="color" begin="mouseleave" to="black"></a-animation>
+        <a-image id="rl1" mixin="image" src="#rr1" scale="0.8 0.65 0.5" position="-1.5 0.7 0" look-at="[camera]">
+          <!-- <a-animation attribute="rotation" begin="click" to="0 360 0"></a-animation> -->
         </a-image>
 
-        <a-image mixin="image" src="#07" scale="0.5 0.5 0.5" position="-2 -2 0" color="black">
-          <a-animation attribute="rotation" begin="click" to="0 360 0"></a-animation>
-          <a-animation attribute="color" begin="mouseenter" to="red"></a-animation>
-          <a-animation attribute="color" begin="mouseleave" to="black"></a-animation>
+        <a-image id="rl2" mixin="image" src="#rr2" scale="0.8 0.65 0.5" position="-1.5 -0.7 0" look-at="[camera]">
+          <!-- <a-animation attribute="rotation" begin="click" to="0 360 0"></a-animation> -->
         </a-image>
-        <a-image mixin="image" src="#08" scale="0.5 0.5 0.5" position="0 -2 0" color="black">
-          <a-animation attribute="rotation" begin="click" to="0 360 0"></a-animation>
-          <a-animation attribute="color" begin="mouseenter" to="red"></a-animation>
-          <a-animation attribute="color" begin="mouseleave" to="black"></a-animation>
+
+        <a-image id="rl3" mixin="image" src="#rr3" scale="0.8 0.65 0.5" position="-1.5 -2.1 0" visible="false" look-at="[camera]">
+          <!-- <a-animation attribute="rotation" begin="click" to="0 360 0"></a-animation> -->
         </a-image>
-        <a-image mixin="image" src="#09" scale="0.5 0.5 0.5" position="2 -2 0" color="black">
+
+        <a-image id="adown" mixin="image" src="#arrowdown" scale="0.8 0.3 0.5" position="-1.5 -1.7 0" look-at="[camera]">
           <a-animation attribute="rotation" begin="click" to="0 360 0"></a-animation>
-          <a-animation attribute="color" begin="mouseenter" to="red"></a-animation>
-          <a-animation attribute="color" begin="mouseleave" to="black"></a-animation>
+        </a-image>
+
+        <a-image id="rm" mixin="image" src="#rr1" scale="3 2 1" position="2.5 0 0" look-at="[camera]">
+          <!-- <a-animation attribute="src" begin="resetrl1" to="#rr1"></a-animation>
+          <a-animation attribute="src" begin="resetrl2" to="#rr2"></a-animation> -->
         </a-image>
       </a-entity>
 
@@ -175,9 +143,53 @@
 
     </a-scene>
 
+
+
     <script type="text/javascript">
+      var cam = document.querySelector('#camera');
+
+      var rm = document.querySelector('#rm');
+      var rl1 = document.querySelector('#rl1');
+      var rl2 = document.querySelector('#rl2');
+      var rl3 = document.querySelector('#rl3');
+      var aup = document.querySelector('#aup');
+      var adown = document.querySelector('#adown');
+
+
+
+
+      rl1.addEventListener('click', function () {
+        rm.setAttribute('src', '#rr1');
+      });
+      rl2.addEventListener('click', function () {
+        rm.setAttribute('src', '#rr2');
+      });
+      rl3.addEventListener('click', function () {
+        rm.setAttribute('src', '#rr3');
+      });
+
+      aup.addEventListener('click', function () {
+        rl1.setAttribute('position', '-1.5 2.1 0');
+        rl1.setAttribute('visible', "false");
+
+        rl2.setAttribute('position', '-1.5 0.7 0');
+
+        rl3.setAttribute('position', '-1.5 -0.7 0');
+        rl3.setAttribute('visible', "true");
+      });
+
+      adown.addEventListener('click', function () {
+        rl1.setAttribute('position', '-1.5 0.7 0');
+        rl1.setAttribute('visible', "true");
+
+        rl2.setAttribute('position', '-1.5 -0.7 0');
+
+        rl3.setAttribute('position', '-1.5 -2.1 0');
+        rl3.setAttribute('visible', "false");
+      });
+
       document.querySelector('#reset').addEventListener('click', function () {
-        var cam = document.querySelector('#camera');
+
         var vrdisplay = cam.components["look-controls"].controls.getVRDisplay();
         if(vrdisplay == undefined){
           cam.emit('resetpose');
@@ -190,6 +202,35 @@
       document.addEventListener("keyup", function(){
         document.querySelector('#camera').emit('resetpose');
       }, false);
+
+
+      document.querySelector('#v0').addEventListener('click', function(){
+        window.location.replace('videoplayer.html');
+      });
+      document.querySelector('#v1').addEventListener('click', function(){
+        window.location.replace('videoplayer.html');
+      });
+      document.querySelector('#v2').addEventListener('click', function(){
+        window.location.replace('videoplayer.html');
+      });
+      document.querySelector('#v3').addEventListener('click', function(){
+        window.location.replace('videoplayer.html');
+      });
+      document.querySelector('#v4').addEventListener('click', function(){
+        window.location.replace('videoplayer.html');
+      });
+      document.querySelector('#v5').addEventListener('click', function(){
+        window.location.replace('videoplayer.html');
+      });
+      document.querySelector('#v6').addEventListener('click', function(){
+        window.location.replace('videoplayer.html');
+      });
+      document.querySelector('#v7').addEventListener('click', function(){
+        window.location.replace('videoplayer.html');
+      });
+      document.querySelector('#v8').addEventListener('click', function(){
+        window.location.replace('videoplayer.html');
+      });
 
     </script>
 

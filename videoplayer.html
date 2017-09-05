@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>360 Video Player</title>
+    <meta name="description" content="360 Video Player">
+    <script src="js/aframe.js"></script>
+  </head>
+  <body>
+    <a-scene>
+      <a-assets>
+        <video id="video" src="videos/test02.mp4"
+               autoplay loop crossorigin="anonymous"></video>
+        <img id="exit0" crossorigin="anonymous" src="img/vr/exit.jpg">
+      </a-assets>
+
+      <a-videosphere src="#video" rotation="0 180 0"></a-videosphere>
+
+      <!-- <a-entity id="menus_middle" scale="0.6 0.6 0.6" rotation="0 0 0" color="green" position="0 0 -4">
+        <a-image mixin="image" src="#exit" scale="1 1 1" position="-1.5 0 0" look-at="[camera]">
+        </a-image>
+      </a-entity> -->
+
+      <a-entity id="camera" camera position="0 1 0" look-controls="enabled: true" rotation="0 0 0" cursor-visible="enabled: true" standing="true">
+         <a-cursor></a-cursor>
+      </a-entity>
+
+
+      <a-image id="exit" src="#exit0" scale="0.3 0.3 0.3"  position="0 1 -2" look-at="[camera]">
+      </a-image>
+
+
+    </a-scene>
+
+    <script type="text/javascript">
+      var exit = document.querySelector('#exit');
+
+      exit.addEventListener('click', function(){
+        console.log('click exit');
+        window.location.replace('index.html');
+      });
+    </script>
+
+
+  </body>
+</html>
