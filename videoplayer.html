@@ -9,7 +9,7 @@
   <body>
     <a-scene>
       <a-assets>
-        <video id="video" src="videos/test02.mp4"
+        <video id="video" src="videos/city.mp4"
                autoplay loop crossorigin="anonymous"></video>
         <img id="exit0" crossorigin="anonymous" src="img/vr/exit.jpg">
       </a-assets>
@@ -31,6 +31,22 @@
 
 
     </a-scene>
+
+    <script>
+     (function () {
+         // switch to stereoscopic mode directly on page load, this needs to be after the a-scene loads.
+         var scene = document.querySelector('a-scene');
+         if (scene.hasLoaded) {
+             scene.enterVR();
+         } else {
+             scene.addEventListener('loaded', function () {
+                 setTimeout(function () {
+                     scene.enterVR();
+                 }, 1000);
+             });
+         };
+     })();
+    </script>
 
     <script type="text/javascript">
       var exit = document.querySelector('#exit');
