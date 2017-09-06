@@ -52,7 +52,7 @@
 
       <a-entity id="camera" camera position="0 0 0" look-controls="enabled: true" rotation="0 0 0" cursor-visible="enabled: true" standing="true">
          <!--a-entity id="cursor" cursor="fuse: true;  maxDistance: 100; timeout: 200" material="color: aquamarine" position="0 0 -0.69" raycaster=""></a-entity-->
-         <a-cursor></a-cursor>
+         <a-cursor color="#FFFF00"></a-cursor>
          <a-animation attribute="rotation" begin="resetpose" to="0 0 0" easing="linear" dur="100"></a-animation>
       </a-entity>
 
@@ -107,15 +107,12 @@
         </a-image>
 
         <a-image id="rl1" mixin="image" src="#rr1" scale="0.8 0.65 0.5" position="-1.5 0.7 0" look-at="[camera]">
-          <!-- <a-animation attribute="rotation" begin="click" to="0 360 0"></a-animation> -->
         </a-image>
 
         <a-image id="rl2" mixin="image" src="#rr2" scale="0.8 0.65 0.5" position="-1.5 -0.7 0" look-at="[camera]">
-          <!-- <a-animation attribute="rotation" begin="click" to="0 360 0"></a-animation> -->
         </a-image>
 
         <a-image id="rl3" mixin="image" src="#rr3" scale="0.8 0.65 0.5" position="-1.5 -2.1 0" visible="false" look-at="[camera]">
-          <!-- <a-animation attribute="rotation" begin="click" to="0 360 0"></a-animation> -->
         </a-image>
 
         <a-image id="adown" mixin="image" src="#arrowdown" scale="0.8 0.3 0.5" position="-1.5 -1.7 0" look-at="[camera]">
@@ -123,8 +120,6 @@
         </a-image>
 
         <a-image id="rm" mixin="image" src="#rr1" scale="3 2 1" position="2.5 0 0" look-at="[camera]">
-          <!-- <a-animation attribute="src" begin="resetrl1" to="#rr1"></a-animation>
-          <a-animation attribute="src" begin="resetrl2" to="#rr2"></a-animation> -->
         </a-image>
       </a-entity>
 
@@ -234,7 +229,7 @@
 
     </script>
 
-    <script>
+    <!-- <script>
      (function () {
          // switch to stereoscopic mode directly on page load, this needs to be after the a-scene loads.
          var scene = document.querySelector('a-scene');
@@ -248,7 +243,7 @@
              });
          };
      })();
-    </script>
+    </script> -->
 
   </body>
 </html>
